@@ -4,79 +4,59 @@
 	<groupId>com.dineshkrish.imgplaceholder</groupId>
 	<artifactId>imgplaceholder</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>ImagePlaceHolder</name>
+	
 	<build>
+		
 		<finalName>imgplaceholder</finalName>
+		
 		<plugins>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<inherited>true</inherited>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<!-- Run the application using "mvn embedded-glassfish:run" -->
+			
+			<!-- Run the application using "mvn tomcat7:run" -->
 			<plugin>
-				<groupId>org.glassfish</groupId>
-				<artifactId>maven-embedded-glassfish-plugin</artifactId>
-				<version>${glassfish.version}</version>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
 				<configuration>
-					<goalPrefix>embedded-glassfish</goalPrefix>
-					<app>/home/dineshkrishnan/eclipse-workspace/target/${project.build.finalName}.war</app>
-					<autoDelete>true</autoDelete>
-					<port>8080</port>
+					<server>TomcatServer</server>
+					<path>/imgplaceholder</path>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>com.sun.jersey</groupId>
-						<artifactId>jersey-servlet</artifactId>
-						<version>${project.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>javax.servlet</groupId>
-						<artifactId>javax.servlet-api</artifactId>
-						<version>3.0.1</version>
-					</dependency>
-				</dependencies>
 			</plugin>
+			
 		</plugins>
+		
 	</build>
+
 	<dependencies>
+
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
+
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>${jersey.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.extras</groupId>
-			<artifactId>glassfish-embedded-web</artifactId>
-			<version>${glassfish.version}</version>
-			<scope>test</scope>
-		</dependency>
+
 	</dependencies>
+
 	<properties>
-		<jersey.version>1.19.4</jersey.version>
-		<glassfish.version>3.1.1</glassfish.version>
+		<jersey.version>2.26</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 </project>

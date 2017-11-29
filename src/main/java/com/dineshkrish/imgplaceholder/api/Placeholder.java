@@ -2,6 +2,7 @@ package com.dineshkrish.imgplaceholder.api;
 
 import java.io.ByteArrayOutputStream;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -23,7 +24,7 @@ public class Placeholder {
 	@GET
 	@Path("/{imageSize}")
 	@Produces("image/png")
-	public Response placeholder(UserInput input) {
+	public Response placeholder(@BeanParam UserInput input) {
 
 		final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 

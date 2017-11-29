@@ -28,7 +28,15 @@ public class PlaceholderUtils {
 	
 	public static ImageProperties constructImgProperties(UserInput input) {
 		
-		return null;
+		String[] str= input.getImageSize().split("x");
+		
+		ImageProperties properties = new ImageProperties();
+		
+		properties.setWidth(Integer.parseInt(str[0]));
+		properties.setHeight(Integer.parseInt(str[1]));
+		
+		
+		return properties;
 	}
 	
 }

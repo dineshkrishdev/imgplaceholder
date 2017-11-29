@@ -1,9 +1,17 @@
 package com.dineshkrish.imgplaceholder.pojo;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
+
 public class UserInput {
 
+	@PathParam("imageSize")
 	private String imageSize;
+
+	@QueryParam("color")
 	private String color;
+
+	@QueryParam("text")
 	private String text;
 
 	public String getImageSize() {
@@ -28,6 +36,11 @@ public class UserInput {
 
 	public void setText(String text) {
 		this.text = text;
+	}
+	
+	public String toString() {
+		
+		return "";
 	}
 
 }
