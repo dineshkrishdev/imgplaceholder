@@ -1,2 +1,5 @@
-# placeit
-Open Source Image Place Holder
+# ImgService
+
+ImgService is open source restful Image service
+
+https://dineshkrishdev.github.io/imgservice/
