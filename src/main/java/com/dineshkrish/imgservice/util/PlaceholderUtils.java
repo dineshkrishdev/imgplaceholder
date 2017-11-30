@@ -2,7 +2,7 @@ package com.dineshkrish.imgservice.util;
 
 import java.util.regex.Pattern;
 
-import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.exception.PlaceHolderException;
 import com.dineshkrish.imgservice.pojo.ImageProperties;
 import com.dineshkrish.imgservice.pojo.UserInput;
 
@@ -17,16 +17,16 @@ public class PlaceholderUtils {
 	/**
 	 * 
 	 * @param input
-	 * @throws ImgPlaceHolderException
+	 * @throws PlaceHolderException
 	 */
-	public static void validate(UserInput input) throws ImgPlaceHolderException {
+	public static void validate(UserInput input) throws PlaceHolderException {
 
 		if (input == null || input.getImageSize() != null && input.getImageSize().isEmpty()) {
-			throw new ImgPlaceHolderException();
+			throw new PlaceHolderException();
 		}
 
 		if (!checkPatern(input.getImageSize())) {
-			throw new ImgPlaceHolderException();
+			throw new PlaceHolderException();
 		}
 
 	}

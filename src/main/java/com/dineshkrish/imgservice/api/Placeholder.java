@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.exception.PlaceHolderException;
 import com.dineshkrish.imgservice.pojo.UserInput;
 import com.dineshkrish.imgservice.service.PlaceholderService;
 
@@ -18,7 +18,7 @@ import com.dineshkrish.imgservice.service.PlaceholderService;
  *
  */
 
-@Path("/")
+@Path("/placeholder")
 public class Placeholder {
 
 	/**
@@ -39,7 +39,7 @@ public class Placeholder {
 
 			service.createPlaceHolder(outputStream, input);
 
-		} catch (ImgPlaceHolderException e) {
+		} catch (PlaceHolderException e) {
 
 		}
 

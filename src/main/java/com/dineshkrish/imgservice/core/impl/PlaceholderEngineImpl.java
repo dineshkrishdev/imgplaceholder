@@ -1,4 +1,4 @@
-package com.dineshkrish.imgservice.core;
+package com.dineshkrish.imgservice.core.impl;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,8 @@ import java.io.OutputStream;
 
 import javax.imageio.ImageIO;
 
-import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.core.PlaceholderEngine;
+import com.dineshkrish.imgservice.exception.PlaceHolderException;
 import com.dineshkrish.imgservice.pojo.ImageProperties;
 import com.dineshkrish.imgservice.util.ApplicationConstant;
 
@@ -19,10 +20,10 @@ import com.dineshkrish.imgservice.util.ApplicationConstant;
  *
  */
 
-public class ImageEngineImpl implements ImageEngine {
+public class PlaceholderEngineImpl implements PlaceholderEngine {
 
 	@Override
-	public void render(ImageProperties properties, OutputStream outputStream) throws ImgPlaceHolderException {
+	public void render(ImageProperties properties, OutputStream outputStream) throws PlaceHolderException {
 
 		int width = properties.getWidth();
 		int heigt = properties.getHeight();
@@ -43,7 +44,7 @@ public class ImageEngineImpl implements ImageEngine {
 
 		} catch (IOException e) {
 
-			throw new ImgPlaceHolderException();
+			throw new PlaceHolderException();
 		}
 
 	}

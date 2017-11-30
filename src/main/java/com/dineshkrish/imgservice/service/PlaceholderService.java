@@ -2,9 +2,9 @@ package com.dineshkrish.imgservice.service;
 
 import java.io.OutputStream;
 
-import com.dineshkrish.imgservice.core.ImageEngine;
-import com.dineshkrish.imgservice.core.ImageEngineImpl;
-import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.core.PlaceholderEngine;
+import com.dineshkrish.imgservice.core.impl.PlaceholderEngineImpl;
+import com.dineshkrish.imgservice.exception.PlaceHolderException;
 import com.dineshkrish.imgservice.pojo.UserInput;
 import com.dineshkrish.imgservice.util.PlaceholderUtils;
 
@@ -20,13 +20,13 @@ public class PlaceholderService {
 	 * 
 	 * @param outputStream
 	 * @param input
-	 * @throws ImgPlaceHolderException
+	 * @throws PlaceHolderException
 	 */
-	public void createPlaceHolder(OutputStream outputStream, UserInput input) throws ImgPlaceHolderException {
+	public void createPlaceHolder(OutputStream outputStream, UserInput input) throws PlaceHolderException {
 		
 		PlaceholderUtils.validate(input);
 		
-		ImageEngine engine = new ImageEngineImpl();
+		PlaceholderEngine engine = new PlaceholderEngineImpl();
 		
 		engine.render(PlaceholderUtils.constructImgProperties(input), outputStream);	
 	}

@@ -2,7 +2,7 @@ package com.dineshkrish.imgservice.core;
 
 import java.io.OutputStream;
 
-import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.exception.PlaceHolderException;
 import com.dineshkrish.imgservice.pojo.ImageProperties;
 
 /**
@@ -11,14 +11,14 @@ import com.dineshkrish.imgservice.pojo.ImageProperties;
  *
  */
 
-public interface ImageEngine {
+public interface PlaceholderEngine {
 
 	/**
 	 * 
 	 * @param properties
 	 * @param outputStream
-	 * @throws ImgPlaceHolderException
+	 * @throws PlaceHolderException
 	 */
-	void render(ImageProperties properties, OutputStream outputStream) throws ImgPlaceHolderException;
+	void render(ImageProperties properties, OutputStream outputStream) throws PlaceHolderException;
 
 }

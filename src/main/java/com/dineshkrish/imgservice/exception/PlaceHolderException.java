@@ -6,12 +6,12 @@ package com.dineshkrish.imgservice.exception;
  *
  */
 
-public class ImgPlaceHolderException extends Exception {
+public class PlaceHolderException extends Exception {
 
 	/**
 	 * 
 	 */
-	public ImgPlaceHolderException() {
+	public PlaceHolderException() {
 
 	}
 
@@ -19,7 +19,7 @@ public class ImgPlaceHolderException extends Exception {
 	 * 
 	 * @param message
 	 */
-	public ImgPlaceHolderException(String message) {
+	public PlaceHolderException(String message) {
 
 		super(message);
 	}
@@ -28,7 +28,7 @@ public class ImgPlaceHolderException extends Exception {
 	 * 
 	 * @param throwable
 	 */
-	public ImgPlaceHolderException(Throwable throwable) {
+	public PlaceHolderException(Throwable throwable) {
 
 		super(throwable);
 	}
@@ -38,7 +38,7 @@ public class ImgPlaceHolderException extends Exception {
 	 * @param message
 	 * @param throwable
 	 */
-	public ImgPlaceHolderException(String message, Throwable throwable) {
+	public PlaceHolderException(String message, Throwable throwable) {
 
 		super(message, throwable);
 	}
