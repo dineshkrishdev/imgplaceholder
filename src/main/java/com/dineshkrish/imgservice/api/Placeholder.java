@@ -1,4 +1,4 @@
-package com.dineshkrish.imgplaceholder.api;
+package com.dineshkrish.imgservice.api;
 
 import java.io.ByteArrayOutputStream;
 
@@ -8,9 +8,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import com.dineshkrish.imgplaceholder.exception.ImgPlaceHolderException;
-import com.dineshkrish.imgplaceholder.pojo.UserInput;
-import com.dineshkrish.imgplaceholder.service.PlaceholderService;
+import com.dineshkrish.imgservice.exception.ImgPlaceHolderException;
+import com.dineshkrish.imgservice.pojo.UserInput;
+import com.dineshkrish.imgservice.service.PlaceholderService;
 
 /**
  * 
@@ -21,6 +21,11 @@ import com.dineshkrish.imgplaceholder.service.PlaceholderService;
 @Path("/")
 public class Placeholder {
 
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
 	@GET
 	@Path("/{imageSize}")
 	@Produces("image/png")
@@ -36,7 +41,6 @@ public class Placeholder {
 
 		} catch (ImgPlaceHolderException e) {
 
-			e.printStackTrace();
 		}
 
 		return Response.ok(outputStream.toByteArray()).build();

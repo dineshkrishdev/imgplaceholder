@@ -7,7 +7,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<servlet>
-		<servlet-name>ImgPlaceHolder-API</servlet-name>
+		<servlet-name>ImgService-API</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
@@ -16,7 +16,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>ImgPlaceHolder-API</servlet-name>
+		<servlet-name>ImgService-API</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 
